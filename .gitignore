@@ -1,6 +1,3 @@
-/.eslintrc.json
 /.npmrc
-/.vscode
-/.vscodeignore
 /node_modules
 /out

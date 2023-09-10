@@ -3,6 +3,7 @@
   "displayName": "type-to-schema",
   "description": "Converts type into schema",
   "version": "0.0.1",
+  "type": "module",
   "engines": {
     "vscode": "^1.81.0"
   },
@@ -14,16 +15,13 @@
   "contributes": {
     "commands": [
       {
-        "command": "type-to-schema.helloWorld",
-        "title": "Hello World"
-      },
-      {
         "command": "type-to-schema.zod",
         "title": "Type To Schema: Converts into zod schema"
       }
     ]
   },
   "scripts": {
+    "build": "tsup",
     "vscode:prepublish": "pnpm run compile",
     "compile": "tsc -p ./",
     "watch": "tsc -watch -p ./",
@@ -31,21 +29,22 @@
     "lint": "eslint src --ext ts",
     "test": "node ./out/test/runTest.js"
   },
+  "dependencies": {
+    "ts-to-zod": "^3.1.3"
+  },
   "devDependencies": {
     "@biomejs/biome": "1.0.0",
     "@biomejs/cli-darwin-x64": "^1.0.0",
+    "@tsconfig/strictest": "^2.0.2",
     "@types/mocha": "^10.0.1",
     "@types/node": "16.x",
     "@types/vscode": "^1.81.0",
     "@typescript-eslint/eslint-plugin": "^6.4.1",
     "@typescript-eslint/parser": "^6.4.1",
     "@vscode/test-electron": "^2.3.4",
-    "eslint": "^8.47.0",
     "glob": "^10.3.3",
     "mocha": "^10.2.0",
+    "tsup": "^7.2.0",
     "typescript": "^5.1.6"
-  },
-  "dependencies": {
-    "ts-to-zod": "^3.1.3"
   }
 }
